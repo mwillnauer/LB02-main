@@ -1,6 +1,7 @@
 // Anmeldeformular mit HTML DOM
 // Validierung E-Mail-Feld
 var disabled = 0;
+
 function emailValidierung() {
     var email = document.getElementById("email_felder").value;
     // Unten steht der Regex für Email format --> gelernt bei einem Stack Overflow (kopiert von Website)
@@ -9,13 +10,11 @@ function emailValidierung() {
         document.getElementById("email_felder").style.borderColor = "green";
         document.getElementById("email_felder").style.borderWidth = "5px";
         if (disabled < 4) {
-           disabled++ // disabled + 1
-       }
-       else {
-           document.getElementById("button").disabled = true;
-       }
-    }
-    else {
+            disabled++ // disabled + 1
+        } else {
+            document.getElementById("button").disabled = true;
+        }
+    } else {
         document.getElementById("email_felder").style.borderColor = "red";
         document.getElementById("email_felder").style.borderWidth = "5px";
     }
@@ -26,21 +25,55 @@ function emailValidierung() {
 
 function nameValidierung() {
     var text = document.getElementById("name_felder").value;
-    // Unten steht der Regex für Email format --> gelernt bei einem Stack Overflow (kopiert von Website)
-    if (text.toString().length > 0) {
-        document.getElementById("email_felder").style.borderColor = "green";
-        document.getElementById("email_felder").style.borderWidth = "5px";
+    if (text.toString().length > 2) {
+        document.getElementById("name_felder").style.borderColor = "green";
+        document.getElementById("name_felder").style.borderWidth = "5px";
         if (disabled < 4) {
             disabled++ // disabled + 1
-        }
-        else {
+        } else {
             document.getElementById("button").disabled = true;
         }
-    }
-    else {
-        document.getElementById("email_felder").style.borderColor = "red";
-        document.getElementById("email_felder").style.borderWidth = "5px";
+    } else {
+        document.getElementById("name_felder").style.borderColor = "red";
+        document.getElementById("name_felder").style.borderWidth = "5px";
     }
 }
+
+function lastnameValidierung() {
+    var text = document.getElementById("lastname_felder").value;
+    if (text.toString().length > 2) {
+        document.getElementById("lastname_felder").style.borderColor = "green";
+        document.getElementById("lastname_felder").style.borderWidth = "5px";
+        if (disabled < 4) {
+            disabled++ // heisst soviel wie disabled +1
+        } else {
+            document.getElementById("button").disabled = true;
+        }
+    } else {
+        document.getElementById("lastname_felder").style.borderColor = "red";
+        document.getElementById("lastname_felder").style.borderWidth = " 5px";
+    }
+}
+
+
+function addressValidierung() {
+    let text = document.getElementById("address_felder").value;
+   console.log(text)
+
+    if (text.toString().length > 5) {
+        document.getElementById("address_felder").style.borderColor = "green";
+        document.getElementById("address_felder").style.borderWidth = "5px";
+        if (disabled < 4) {
+            disabled++ // heisst soviel wie disabled +1
+        } else {
+            document.getElementById("button").disabled = true;
+        }
+    } else {
+        document.getElementById("address_felder").style.borderColor = "red";
+        document.getElementById("address_felder").style.borderWidth = " 5px";
+    }
+}
+
+
 
 //das war das HTML DOM
